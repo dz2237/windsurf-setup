@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windsurf 环境配置指南</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Windsurf 环境配置指南</h1>
+        
+        <div class="steps-container">
+            <h2>配置步骤</h2>
+            
+            <div class="step">
+                <h3>1. 安装 Python 3.11</h3>
+                <ol>
+                    <li>访问 <a href="https://www.python.org/downloads/release/python-3110/" target="_blank">Python 3.11.0 下载页面</a></li>
+                    <li>根据您的操作系统选择合适的安装包：
+                        <ul>
+                            <li>Windows: 下载 "Windows installer (64-bit)"</li>
+                            <li>macOS: 下载 "macOS 64-bit universal2 installer"</li>
+                        </ul>
+                    </li>
+                    <li>运行下载的安装程序</li>
+                    <li>重要：安装时勾选 "Add Python 3.11 to PATH"</li>
+                    <li>完成安装后，打开命令行（Windows按Win+R输入cmd，macOS打开终端）</li>
+                    <li>输入 <code>python --version</code> 确认安装成功，应显示 Python 3.11.x</li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h3>2. 安装必要的 Python 库</h3>
+                <ol>
+                    <li>在命令行中输入以下命令安装 numpy：
+                        <pre><code>pip install numpy</code></pre>
+                    </li>
+                    <li>安装 pandas：
+                        <pre><code>pip install pandas</code></pre>
+                    </li>
+                    <li>验证安装：
+                        <pre><code>python -c "import numpy; import pandas; print('numpy version:', numpy.__version__); print('pandas version:', pandas.__version__)"</code></pre>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h3>3. 安装 Windsurf</h3>
+                <ol>
+                    <li>在命令行中输入：
+                        <pre><code>pip install windsurf</code></pre>
+                    </li>
+                    <li>等待安装完成</li>
+                    <li>验证安装：
+                        <pre><code>python -c "import windsurf; print('windsurf installed successfully')"</code></pre>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="verification-form">
+            <h2>提交验证</h2>
+            <form id="verificationForm">
+                <div class="form-group">
+                    <label for="name">姓名：</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="screenshot">环境配置截图：</label>
+                    <input type="file" id="screenshot" name="screenshot" accept="image/*" required>
+                    <div class="screenshot-preview" id="screenshotPreview"></div>
+                </div>
+
+                <button type="submit">提交验证</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
